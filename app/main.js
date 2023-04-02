@@ -150,6 +150,7 @@ const gotoRegisterListener = () => {
 
 const authListener = action => {
     const form = document.getElementById(`${action}-form`)
+    // console.log(document.getElementById(`${action}-form`));
     form.onsubmit = async (e) => {
         e.preventDefault()
         const formData = new FormData(form)
@@ -173,12 +174,13 @@ const authListener = action => {
         }
     }
 }
-const addLoginListener = authListener('login')
-const addRegisterListener = authListener('register')
+const addLoginListener = () => authListener('login')
+const addRegisterListener = () => authListener('register')
 
 window.onload = () => {
     const isLoggedIn = checkLogin()
     if (isLoggedIn) {
+        console.log("object");
         animalsPage()
     } else {
         loginPage()
