@@ -29,5 +29,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Arrancando la aplicación')
+    console.log('Arrancando la aplicación. Puerto ' + port)
 })
